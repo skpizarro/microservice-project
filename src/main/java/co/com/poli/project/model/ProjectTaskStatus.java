@@ -1,4 +1,4 @@
-package co.com.poli.backlog.model;
+package co.com.poli.project.model;
 
 public enum ProjectTaskStatus {
     NOT_STARED,

@@ -1,6 +1,7 @@
 package co.com.poli.project.controllers;
 
 import co.com.poli.project.domain.Project;
+import co.com.poli.project.model.ErrorMessage;
 import co.com.poli.project.services.IProjectService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -58,7 +59,10 @@ public class ProjectController {
                     return error;
                 }).collect(Collectors.toList()); // como retorna un string toca convertirlo a una lista
 
-        co.com.poli.backlog.model.ErrorMessage errorMessage = new co.com.poli.backlog.model.ErrorMessage("01",errors);
+        ErrorMessage errorMessage = ErrorMessage.builder()
+                .code("01")
+                .messages(errors)
+                .build();
 
         ObjectMapper objectMapper = new ObjectMapper();
         String json = "";

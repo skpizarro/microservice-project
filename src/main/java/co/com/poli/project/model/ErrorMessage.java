@@ -1,4 +1,4 @@
-package co.com.poli.backlog.model;
+package co.com.poli.project.model;
 
 import lombok.Builder;
 import lombok.Getter;
